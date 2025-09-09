@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import img from '../assets/Logo.jpg'
+import img from '../assets/vezzra-removebg-preview.png'
 import { Link, NavLink } from 'react-router-dom'
 import { 
   CiHome, 
@@ -17,6 +17,7 @@ import {
 import { FaCircleInfo } from "react-icons/fa6";
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false)
+  const [open,setopen]=useState(false)
   
   const navItems = [
     { path: '/', icon: CiHome, label: 'Home' },
@@ -53,10 +54,10 @@ const Sidebar = () => {
         {/* Header Section */}
         <div className='flex flex-col'>
           {/* Logo with Mobile Toggle */}
-          <div className='p-4 lg:p-6 border-b border-gray-800 flex items-center justify-between'>
+          <div className='p-4 lg:p-6 border-b border-gray-800 '>
             <Link to='/' onClick={() => setIsCollapsed(false)}>
               <img 
-                className='h-8 lg:h-12 w-auto object-contain hover:scale-105 transition-transform duration-200' 
+                className='h-12 lg:h-18  w-auto object-contain hover:scale-105 transition-transform duration-200' 
                 src={img} 
                 alt="Logo" 
               />
@@ -64,7 +65,7 @@ const Sidebar = () => {
             {/* Close button for mobile */}
             <button 
               className="lg:hidden text-gray-400 hover:text-white p-2"
-              onClick={() => setIsCollapsed(false)}
+              onClick={() => setIsCollapsed(false)} onclick={() => setopen(!open)}
             >
               ✕
             </button>
@@ -108,13 +109,16 @@ const Sidebar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Button */}
-      <button 
-        className="fixed top-4 left-4 z-40 lg:hidden bg-gray-800 text-white p-3 rounded-lg shadow-lg hover:bg-gray-700 transition-colors"
-        onClick={() => setIsCollapsed(true)}
-      >
-        <CiMenuFries className='w-6 h-6' />
-      </button>
+     {/* Mobile Menu Button (only show when sidebar is closed) */}
+{!isCollapsed && (
+  <button 
+    className="fixed top-4 left-4 z-40 lg:hidden bg-gray-800 text-white p-3 rounded-lg shadow-lg hover:bg-gray-700 transition-colors"
+    onClick={() => setIsCollapsed(true)}
+  >
+    <CiMenuFries className='w-6 h-6' />
+  </button>
+)}
+
     </>
   )
 }
