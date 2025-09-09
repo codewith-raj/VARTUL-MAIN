@@ -12,12 +12,11 @@ import {
   CiSettings, 
   CiLogout,
   CiMenuFries,
-
 } from "react-icons/ci"
 import { FaCircleInfo } from "react-icons/fa6";
+
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false)
-  const [open,setopen]=useState(false)
   
   const navItems = [
     { path: '/', icon: CiHome, label: 'Home' },
@@ -28,7 +27,7 @@ const Sidebar = () => {
     { path: '/twt_token', icon: CiCoinInsert, label: 'Twt Token' },
     { path: '/dashboard', icon: CiGrid41, label: 'Dashboard' },
     { path: '/setting', icon: CiSettings, label: 'Setting' },
-    { path: '/about-us', icon:  FaCircleInfo, label: 'About us' },
+    { path: '/about-us', icon: FaCircleInfo, label: 'About us' },
   ]
 
   return (
@@ -43,9 +42,9 @@ const Sidebar = () => {
       
       {/* Sidebar */}
       <div className={`
-        fixed lg:static top-0 left-0 z-30
+        fixed top-0 left-0 z-30 h-screen
         ${isCollapsed ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-        w-64 lg:w-[18%] lg:min-w-[250px] h-screen
+        w-64 lg:w-[250px]
         bg-gradient-to-b from-gray-900 to-black shadow-2xl 
         flex flex-col border-r border-gray-800 
         transition-transform duration-300 ease-in-out
@@ -54,10 +53,10 @@ const Sidebar = () => {
         {/* Header Section */}
         <div className='flex flex-col'>
           {/* Logo with Mobile Toggle */}
-          <div className='p-4 lg:p-6 border-b border-gray-800 '>
+          <div className='p-4 lg:p-6 border-b border-gray-800 flex justify-between items-center'>
             <Link to='/' onClick={() => setIsCollapsed(false)}>
               <img 
-                className='h-12 lg:h-18  w-auto object-contain hover:scale-105 transition-transform duration-200' 
+                className='h-12 lg:h-16 w-auto object-contain hover:scale-105 transition-transform duration-200' 
                 src={img} 
                 alt="Logo" 
               />
@@ -65,7 +64,7 @@ const Sidebar = () => {
             {/* Close button for mobile */}
             <button 
               className="lg:hidden text-gray-400 hover:text-white p-2"
-              onClick={() => setIsCollapsed(false)} onclick={() => setopen(!open)}
+              onClick={() => setIsCollapsed(false)}
             >
               ✕
             </button>
@@ -109,16 +108,15 @@ const Sidebar = () => {
         </div>
       </div>
 
-     {/* Mobile Menu Button (only show when sidebar is closed) */}
-{!isCollapsed && (
-  <button 
-    className="fixed top-4 left-4 z-40 lg:hidden bg-gray-800 text-white p-3 rounded-lg shadow-lg hover:bg-gray-700 transition-colors"
-    onClick={() => setIsCollapsed(true)}
-  >
-    <CiMenuFries className='w-6 h-6' />
-  </button>
-)}
-
+      {/* Mobile Menu Button */}
+      {!isCollapsed && (
+        <button 
+          className="fixed top-4 left-4 z-40 lg:hidden bg-gray-800 text-white p-3 rounded-lg shadow-lg hover:bg-gray-700 transition-colors"
+          onClick={() => setIsCollapsed(true)}
+        >
+          <CiMenuFries className='w-6 h-6' />
+        </button>
+      )}
     </>
   )
 }
