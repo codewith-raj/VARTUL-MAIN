@@ -9,10 +9,13 @@ import Aboutus from './Pages/Aboutus'
 import Twt_Token from './Pages/Twt_Token'
 import Dashboard from './Pages/Dashboard'
 import Seeting from './Pages/Seeting'
+import Footer from './Pages/Footer'
+
 const App = () => {
   return (
-    <div className=' flex'>
-      <Sidebar/>
+    <div className=' flex flex-col '>
+    <div>
+        <Sidebar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/reels' element={<Reels/>}/>
@@ -23,6 +26,8 @@ const App = () => {
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/setting' element={<Seeting/>}/>
       </Routes>
+    </div>
+   <Footer/>
     </div>
   )
 }

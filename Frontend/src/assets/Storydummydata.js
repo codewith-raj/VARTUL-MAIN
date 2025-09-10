@@ -85,3 +85,39 @@ export const dummyPosts = [
     caption: "Good vibes only ✌️💯",
   },
 ]
+
+
+
+// Dummy data for suggested users
+export const dummySuggested = [
+  {
+    id: 1,
+    username: "techguru.hub",
+    profile: img1,
+    note: "Followed by coder.ashish",
+  },
+  {
+    id: 2,
+    username: "travel_with_me",
+    profile: img2,
+    note: "Followed by wanderer.kriti",
+  },
+  {
+    id: 3,
+    username: "foodiez.delight",
+    profile: img3,
+    note: "Followed by yummy.tales",
+  },
+  {
+    id: 4,
+    username: "fitness_freak23",
+    profile: img4,
+    note: "Suggested for you",
+  },
+  {
+    id: 5,
+    username: "artistic.soul",
+    profile: img5,
+    note: "Followed by creative_riya",
+  },
+];
