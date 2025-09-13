@@ -10,11 +10,13 @@ import Twt_Token from './Pages/Twt_Token'
 import Dashboard from './Pages/Dashboard'
 import Seeting from './Pages/Seeting'
 import Footer from './Pages/Footer'
+import { ToastContainer } from 'react-toastify'
 
 const App = () => {
   return (
     <div className=' flex flex-col '>
     <div>
+      <ToastContainer/>
         <Sidebar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
