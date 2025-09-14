@@ -1,23 +1,22 @@
 import React from 'react';
-import { RiArrowDropDownLine } from "react-icons/ri";
-import { CiSearch } from "react-icons/ci";
+import { ChevronDownIcon, PencilIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 const Chatleft = () => {
   return (
-    <div className='p-4 sm:p-6 max-h-screen w-full max-w-[800px] mx-auto lg:ml-40 xl:ml-65'>
+    <div className='p-4 sm:p-6 max-h-screen w-full max-w-[350px] mx-auto lg:ml-40 xl:ml-65 bg-black'>
       {/* Header Section */}
       <div className='flex items-center justify-between sm:justify-start sm:space-x-8 md:space-x-12 lg:space-x-16'>
         {/* User Profile */}
-        <div className='flex items-center gap-7 cursor-pointer hover:opacity-80 transition-opacity duration-200'>
+        <div className='flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity duration-200'>
           <p className='font-bold text-xl sm:text-2xl text-white truncate max-w-[150px] sm:max-w-none'>
             @vikramsingh
           </p>
-          <RiArrowDropDownLine className='text-2xl sm:text-3xl text-gray-400 hover:text-white transition-colors duration-200 flex-shrink-0'/>
+          <ChevronDownIcon className='w-6 h-6 text-gray-400 hover:text-white transition-colors duration-200 flex-shrink-0'/>
         </div>
         
         {/* Edit Icon */}
-        <div className='cursor-pointer ml-20 p-2 rounded-lg transition-colors duration-200 flex-shrink-0'>
-          <svg 
+        <div className='cursor-pointer p-2  rounded-lg transition-colors duration-200 flex-shrink-0'>
+           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             fill="none" 
             viewBox="0 0 24 24" 
@@ -35,17 +34,21 @@ const Chatleft = () => {
       </div>
 
       {/* Search Section */}
-      <div className='mt-6 sm:mt-8 relative'>
-        <div className='relative'>
+      <div className='mt-6 sm:mt-8'>
+        <div className='relative w-[300px] max-w-md'>
+          <MagnifyingGlassIcon className='absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none z-10'/>
           <input 
+            type="text"
             placeholder='Search' 
-            className='bg-[#1a1a1a] border-none w-98 h-10 sm:h-11 rounded-lg pl-4 pr-12 text-sm sm:text-base text-white placeholder-gray-500 placeholder:p-7    focus:outline-none'
+            className='w-full h-10 sm:h-12 bg-[#2a2a2a] border border-gray-600 rounded-lg pl-10 pr-4 text-sm sm:text-base text-white placeholder-gray-400 focus:outline-none transition-all duration-200'
           />
-          <CiSearch className='absolute left-3 top-1/2 transform -translate-y-1/2 text-xl sm:text-2xl text-gray-400 pointer-events-none'/>
         </div>
       </div>
 
-   
+      <div className='flex justify-between'>
+        <p className='font-bold text-md'>Messages</p>
+        <p className='text-gray-400 cursor-pointer'>Request</p>
+      </div>
     </div>
   );
 };

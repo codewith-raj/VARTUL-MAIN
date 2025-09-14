@@ -121,3 +121,63 @@ export const dummySuggested = [
     note: "Followed by creative_riya",
   },
 ];
+
+
+
+//dummy data for chats
+export const dummyChats = [
+  {
+    id: 1,
+    name: "Devansh Tiwari",
+    profile: img1,
+    lastMessage: "Devansh sent an attachment.",
+    time: "21m",
+    unread: true,
+    isAttachment: true,
+  },
+  {
+    id: 2,
+    name: "Hritik Raj",
+    profile: img2,
+    lastMessage: "Hritik sent an attachment.",
+    time: "1h",
+    unread: true,
+    isAttachment: true,
+  },
+  {
+    id: 3,
+    name: "Piyush",
+    profile: img3,
+    lastMessage: "Isko kabhi dekha?",
+    time: "5h",
+    unread: true,
+    isAttachment: false,
+  },
+  {
+    id: 4,
+    name: "ammy singh",
+    profile: img4,
+    lastMessage: "ਭੁਟਟਮ sent an attachment.",
+    time: "9h",
+    unread: true,
+    isAttachment: true,
+  },
+  {
+    id: 5,
+    name: "Manya",
+    profile: img5,
+    lastMessage: "Veer sent an attachment.",
+    time: "1d",
+    unread: true,
+    isAttachment: true,
+  },
+  {
+    id: 6,
+    name: "Aryan Gupta",
+    profile: img1,
+    lastMessage: "Reacted 😂 to your message",
+    time: "2d",
+    unread: false,
+    isAttachment: false,
+  },
+];
