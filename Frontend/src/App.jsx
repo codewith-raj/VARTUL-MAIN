@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes,useLocation } from 'react-router-dom'
 import Home from './Pages/Home'
 import Reels from './Pages/Reels'
 import Settings from './Pages/Settings'
@@ -8,11 +8,13 @@ import Sidebar from './Components/Sidebar'
 import Aboutus from './Pages/Aboutus'
 import Twt_Token from './Pages/Twt_Token'
 import Dashboard from './Pages/Dashboard'
-import Seeting from './Pages/Seeting'
+
 import Footer from './Pages/Footer'
 import { ToastContainer } from 'react-toastify'
 
 const App = () => {
+   const location = useLocation()
+     const hideFooter = location.pathname.startsWith('/chat')
   return (
     <div className=' flex flex-col '>
     <div>
@@ -26,10 +28,10 @@ const App = () => {
         <Route path='/about-us' element={<Aboutus/>}/>
         <Route path='/twt_token' element={<Twt_Token/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
-        <Route path='/setting' element={<Seeting/>}/>
+        <Route path='/setting' element={<Settings/>}/>
       </Routes>
     </div>
-   <Footer/>
+   {!hideFooter && <Footer />}
     </div>
   )
 }

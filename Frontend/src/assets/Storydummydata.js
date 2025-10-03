@@ -181,3 +181,56 @@ export const dummyChats = [
     isAttachment: false,
   },
 ];
+
+
+
+export const messages = [
+  {
+    id: 1,
+    chatId: "chat1",
+    sender: {
+      id: "u101",
+      name: "Alison",
+      avatar: img1,
+    },
+    text: "Hey! Did you check out the new reel?",
+    timestamp: "2025-10-03T14:25:00Z",
+    isMe: false, // message from other user
+  },
+  {
+    id: 2,
+    chatId: "chat1",
+    sender: {
+      id: "me",
+      name: "Me",
+      avatar:img2,
+    },
+    text: "Yeah, just watched it 🔥 really cool!",
+    timestamp: "2025-10-03T14:26:10Z",
+    isMe: true, // my message
+  },
+  {
+    id: 3,
+    chatId: "chat1",
+    sender: {
+      id: "u101",
+      name: "Alison",
+      avatar: img3,
+    },
+    text: "Did you stake tokens on it?",
+    timestamp: "2025-10-03T14:27:20Z",
+    isMe: false,
+  },
+  {
+    id: 4,
+    chatId: "chat1",
+    sender: {
+      id: "me",
+      name: "Me",
+      avatar: img4
+    },
+    text: "Yes, I staked 50 tokens 🚀",
+    timestamp: "2025-10-03T14:28:00Z",
+    isMe: true,
+  },
+];

@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { ChevronDownIcon, PencilIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { dummyChats } from '../../assets/Storydummydata';
+import { ChatContext } from '../../Context/Chat';
 
 const Chatleft = () => {
+const {selectedChat,setSelectedChat}=useContext(ChatContext)
   return (
-    <div className='p-4 sm:p-6 max-h-screen w-full max-w-[350px] mx-auto lg:ml-40 xl:ml-65 bg-black'>
+    <div className='p-4 sm:p-6 h-screen w-full max-w-[350px] mx-auto lg:ml-40 xl:ml-65 bg-black border-r    '>
       {/* Header Section */}
-      <div className='flex items-center justify-between sm:justify-start sm:space-x-8 md:space-x-12 lg:space-x-16'>
+      <div className='flex items-center justify-between sm:justify-start sm:space-x-8 md:space-x-12 lg:space-x-16 '>
         {/* User Profile */}
         <div className='flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity duration-200'>
           <p className='font-bold text-xl sm:text-2xl text-white truncate max-w-[150px] sm:max-w-none'>
-            @vikramsingh
+            vikramsingh
           </p>
           <ChevronDownIcon className='w-6 h-6 text-gray-400 hover:text-white transition-colors duration-200 flex-shrink-0'/>
         </div>
@@ -34,7 +37,7 @@ const Chatleft = () => {
       </div>
 
       {/* Search Section */}
-      <div className='mt-6 sm:mt-8'>
+      <div className=' sm:mt-2 '>
         <div className='relative w-[300px] max-w-md'>
           <MagnifyingGlassIcon className='absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none z-10'/>
           <input 
@@ -45,9 +48,33 @@ const Chatleft = () => {
         </div>
       </div>
 
-      <div className='flex justify-between'>
+      <div className='flex justify-between mt-3'>
         <p className='font-bold text-md'>Messages</p>
         <p className='text-gray-400 cursor-pointer'>Request</p>
+      </div>
+
+      <div>
+        {dummyChats.map((chat) => (
+          <div key={chat.id} className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer hover:bg-gray-800 transition-colors duration-200 mt-2 ${selectedChat?.id === chat.id ? 'bg-gray-800' : ''}`} onClick={() => setSelectedChat(chat)}
+>
+            <img
+
+              src={chat. profile}
+              alt={chat.name}
+              className='w-12 h-12 rounded-full object-cover'
+            />
+            <div className='flex-1 min-w-0'>
+              <p className='font-semibold text-white text-sm sm:text-base truncate'>{chat.name}</p>
+              <p className='text-gray-400 text-xs sm:text-sm truncate'>{chat.lastMessage}</p>
+            </div>
+            {chat.unreadCount > 0 && (
+              <div className='bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full'>
+                {chat.unreadCount}
+              </div>
+            )}
+          </div>
+        )
+        )}
       </div>
     </div>
   );
