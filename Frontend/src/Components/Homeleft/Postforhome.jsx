@@ -4,7 +4,7 @@ import { dummyPosts } from '../../assets/Storydummydata'
 
 const Postforhome = () => {
   return (
-    <div className="py-6 space-y-8">
+    <div className="py-4 sm:py-6 space-y-4 sm:space-y-10 md:space-y-8 px-2 md:ml-40 lg:ml-35 @[640px-768px]:ml-250 sm:px-0">
       {dummyPosts.map((post, index) => (
         <Posthelper 
           key={post.id}

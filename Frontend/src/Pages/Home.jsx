@@ -16,7 +16,7 @@ const Home = () => {
         </div>
         
         {/* Posts Feed */}
-        <div className="max-w-2xl mx-auto  ml-35">
+        <div className="max-w-2xl ">
           <Postforhome />
         </div>
       </div>

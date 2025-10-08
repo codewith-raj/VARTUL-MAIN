@@ -11,6 +11,11 @@ export const dummyStories = [
     image: img2,
   },
   {
+    id: 8,
+    username: "Vikram Singh",
+    image: img2,
+  },
+  {
     id: 2,
     username: "Ritik",
     image: img1,

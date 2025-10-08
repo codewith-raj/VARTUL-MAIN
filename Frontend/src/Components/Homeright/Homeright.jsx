@@ -4,14 +4,14 @@ import { dummySuggested } from '../../assets/Storydummydata'
 
 const Homeright = () => {
   return (
-    <div className='hidden lg:block w-[320px] mr-18 mt-10'>
+    <div className='hidden md:block w-full md:w-[280px] lg:w-[320px] md:mr-4 lg:mr-18 mt-6 md:mt-8 lg:mt-10 md:px-4 lg:px-0'>
       {/* User Profile Section */}
-      <div className='flex justify-between items-center p-2 mb-5'>
+      <div className='flex justify-between items-center p-2 mb-4 md:mb-5'>
         <div className='flex items-center flex-1'>
-          <img className='w-14 h-14 rounded-full object-cover' src={img1} alt="Profile" />
-          <div className='flex flex-col ml-3 flex-1'>
-            <p className='font-semibold text-sm '>vikramsingh.gangwar</p>
-            <p className='font-normal text-sm text-gray-500'>Vikram Singh Gangwar</p>
+          <img className='w-12 h-12 md:w-14 md:h-14 rounded-full object-cover' src={img1} alt="Profile" />
+          <div className='flex flex-col ml-2 md:ml-3 flex-1'>
+            <p className='font-semibold text-sm'>vikramsingh.gangwar</p>
+            <p className='font-normal text-xs md:text-sm text-gray-500'>Vikram Singh Gangwar</p>
           </div>
         </div>
         <button className='text-blue-500 font-semibold text-xs hover:text-blue-700 transition-colors'>
@@ -29,20 +29,20 @@ const Homeright = () => {
         </div>
 
         {/* Suggestions List */}
-        <div className='space-y-3'>
+        <div className='space-y-2 md:space-y-3'>
           {dummySuggested.map((suggestion, index) => (
-            <div key={index} className='flex justify-between items-center px-1 py-2 rounded-lg transition-colors'>
+            <div key={index} className='flex justify-between items-center px-1 py-1.5 md:py-2 rounded-lg transition-colors'>
               <div className='flex items-center flex-1'>
                 <img 
                   className='w-8 h-8 rounded-full object-cover' 
                   src={suggestion.profile} 
                   alt={`${suggestion.username} profile`} 
                 />
-                <div className='flex flex-col ml-3 flex-1 min-w-0'>
-                  <p className='font-semibold text-sm  truncate'>
+                <div className='flex flex-col ml-2 md:ml-3 flex-1 min-w-0'>
+                  <p className='font-semibold text-sm truncate'>
                     {suggestion.username}
                   </p>
-                  <p className='font-normal text-xs  truncate'>
+                  <p className='font-normal text-xs truncate'>
                     {suggestion.followedBy ? `Followed by ${suggestion.followedBy}` : 'Suggested for you'}
                   </p>
                 </div>
@@ -56,7 +56,7 @@ const Homeright = () => {
       </div>
 
       {/* Footer Links */}
-      <div className='mt-8 px-1'>
+      <div className='mt-6 md:mt-8 px-1'>
         <div className='text-xs text-gray-400 space-y-1'>
           <div className='flex flex-wrap gap-1'>
             <span>About ·</span>
