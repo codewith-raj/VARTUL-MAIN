@@ -9,7 +9,8 @@ const Home = () => {
    
       
    
-      <div className="flex-1 lg:ml-[250px]">
+      <div className="flex-1 ml-0 lg:ml-[250px] overflow-x-hidden">
+
    
         <div >
          <Hero/>

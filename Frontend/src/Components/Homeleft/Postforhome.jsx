@@ -4,16 +4,17 @@ import { dummyPosts } from '../../assets/Storydummydata'
 
 const Postforhome = () => {
   return (
-    <div className="py-4 sm:py-6 space-y-4 sm:space-y-10 md:space-y-8 px-2 md:ml-40 lg:ml-35 @[640px-768px]:ml-250 sm:px-0">
-      {dummyPosts.map((post, index) => (
-        <Posthelper 
-          key={post.id}
-          profile={post.profile}
-          username={post.username}
-          postImage={post.postImage}
-          likes={post.likes}
-          caption={post.caption}
-        />
+    <div className="py-3 sm:py-6 space-y-3 sm:space-y-8 px-2 sm:px-4 mx-auto w-full max-w-[95%] sm:max-w-[85%] md:max-w-[70%] overflow-x-hidden">
+      {dummyPosts.map((post) => (
+        <div key={post.id} className="transform scale-[0.95] sm:scale-100">
+          <Posthelper 
+            profile={post.profile}
+            username={post.username}
+            postImage={post.postImage}
+            likes={post.likes}
+            caption={post.caption}
+          />
+        </div>
       ))}
     </div>
   )

@@ -4,7 +4,7 @@ import { dummySuggested } from '../../assets/Storydummydata'
 
 const Homeright = () => {
   return (
-    <div className='hidden md:block w-full md:w-[280px] lg:w-[320px] md:mr-4 lg:mr-18 mt-6 md:mt-8 lg:mt-10 md:px-4 lg:px-0'>
+    <div className='hidden lg:block w-full md:w-[280px] lg:w-[320px] md:mr-4 lg:mr-18 mt-6 md:mt-8 lg:mt-10 md:px-4 lg:px-0'>
       {/* User Profile Section */}
       <div className='flex justify-between items-center p-2 mb-4 md:mb-5'>
         <div className='flex items-center flex-1'>

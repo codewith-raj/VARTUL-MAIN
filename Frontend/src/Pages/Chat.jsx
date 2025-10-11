@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ChatContext } from '../Context/Chat'
 import Chatleft from '../Components/Chat/Chatleft'
 import Chatright from '../Components/Chat/Chatright'
+import Chatrightsm from '../Components/Chat/Chatrightsm'
 
 const Chat = () => {
-  return (
-    <div className='flex h-screen'>
-      {/* Left sidebar with both components */}
-      <div className='w-full flex '>
-        <div className='h-1/2 border-b-2 border-gray-200'>
-          <Chatleft/>
-        </div>
-        <div className='h-1/2'>
-          <Chatright/>
-        </div>
-      </div>
-      
+  const { selectedChat } = useContext(ChatContext)
 
+  return (
+    <div className='flex h-screen overflow-hidden bg-black'>
+      {/* Mobile View */}
+      <div className='md:hidden w-full'>
+        {!selectedChat ? (
+          <Chatleft />
+        ) : (
+          <Chatrightsm />
+        )}
+      </div>
+
+      {/* Desktop View - Show both side by side */}
+      <div className='hidden md:flex w-full'>
+        <Chatleft />
+        {selectedChat && <Chatright />}
+      </div>
     </div>
   )
 }
+
 export default Chat

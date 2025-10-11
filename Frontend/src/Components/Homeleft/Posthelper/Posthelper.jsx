@@ -43,7 +43,7 @@ const Posthelper = ({profile, username, postImage, likes, caption, isOwnPost = f
   }
 
   return (
-    <div className='flex flex-col mx-auto mt-6 rounded-lg w-[35rem]'>
+    <div className='flex flex-col mx-auto mt-6 rounded-lg w-full max-w-[35rem]'>
       {/* Header section */}
       <div className='w-full'>
         <div className='flex items-center justify-between p-4'>
@@ -65,7 +65,7 @@ const Posthelper = ({profile, username, postImage, likes, caption, isOwnPost = f
       </div>
       
       {/* Post image section - aligned with profile circle */}
-      <div className='w-full pl-4'>
+      <div className='w-full'>
         <img 
           className='w-full h-auto object-cover rounded-lg' 
           src={postImage || 'https://via.placeholder.com/560x400'} 
