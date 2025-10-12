@@ -11,6 +11,8 @@ import Dashboard from './Pages/Dashboard'
 
 import Footer from './Pages/Footer'
 import { ToastContainer } from 'react-toastify'
+import Myprofile from './Pages/Myprofile'
+
 
 const App = () => {
    const location = useLocation()
@@ -29,6 +31,9 @@ const App = () => {
         <Route path='/twt_token' element={<Twt_Token/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/setting' element={<Settings/>}/>
+        <Route path='/profile' element={<Myprofile/>}/>
+ 
+
       </Routes>
     </div>
    {!hideFooter && <Footer />}
