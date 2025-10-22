@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import img from '../assets/vezzra-removebg-preview.png'
 import { Link, NavLink } from 'react-router-dom'
 import Logo from './ui/Logo'
 import { 
@@ -17,8 +18,25 @@ import { FaCircleInfo } from "react-icons/fa6";
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1400) {
+        setIsCollapsed(true)
+      } else {
+        setIsCollapsed(false)
+      }
+    }
+
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
   
-  // Replace this with actual user profile image
   const userProfileImage = 'https://via.placeholder.com/40x40'
   
   const navItems = [
@@ -33,25 +51,32 @@ const Sidebar = () => {
     { path: '/about-us', icon: FaCircleInfo, label: 'About us' },
   ]
 
-  // Main items for bottom nav (mobile)
   const bottomNavItems = [
     { path: '/', icon: CiHome, label: 'Home' },
     { path: '/reels', icon: CiVideoOn, label: 'Reels' },
     { path: '/chat', icon: CiChat1, label: 'Messages' },
     { path: '/twt_token', icon: CiCoinInsert, label: 'Token' },
     { path: '/dashboard', icon: CiGrid41, label: 'Dashboard' },
-    { path: '/profile', icon: 'profile', label: 'Profile' }, // Special case for profile
+    { path: '/profile', icon: 'profile', label: 'Profile' },
   ]
 
   return (
     <>
       {/* Desktop Sidebar */}
-      <div className="hidden lg:block fixed top-0 left-0 z-30 h-screen w-[250px] bg-gradient-to-b from-gray-900 to-black shadow-2xl flex-col border-r border-gray-800 overflow-y-auto hide-scrollbar">
+      <div className={`hidden lg:block fixed top-0 left-0 z-30 h-screen bg-gradient-to-b from-gray-900 to-black shadow-2xl flex-col border-r border-gray-800 overflow-y-auto hide-scrollbar transition-all duration-300 ${
+        isCollapsed ? 'w-[80px]' : 'w-[250px]'
+      }`}>
         {/* Header Section */}
         <div className='flex flex-col'>
           {/* Logo */}
           <div className='p-6 border-b border-gray-800'>
-            <Logo />
+            <Link to='/'>
+              <img 
+                className='h-16 w-auto object-contain hover:scale-105 transition-transform duration-200' 
+                src={img} 
+                alt="Logo" 
+              />
+            </Link>
           </div>
           
           {/* Navigation Links */}
@@ -63,17 +88,20 @@ const Sidebar = () => {
                   key={item.path}
                   to={item.path}
                   className={({ isActive }) =>
-                    `flex items-center gap-4 p-3 mx-2 mb-2 rounded-xl transition-all duration-200 group ${
+                    `flex items-center ${isCollapsed ? 'justify-center' : 'gap-4'} p-3 mx-2 mb-2 rounded-xl transition-all duration-200 group ${
                       isActive 
                         ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' 
                         : 'text-gray-300 hover:bg-gray-800 hover:text-white hover:shadow-lg'
                     }`
                   }
+                  title={isCollapsed ? item.label : ''}
                 >
                   <IconComponent className='w-6 h-6 flex-shrink-0' />
-                  <p className='text-base font-medium'>
-                    {item.label}
-                  </p>
+                  {!isCollapsed && (
+                    <p className='text-base font-medium'>
+                      {item.label}
+                    </p>
+                  )}
                 </NavLink>
               )
             })}
@@ -82,11 +110,15 @@ const Sidebar = () => {
         
         {/* Logout Button */}
         <div className='mt-auto p-3 border-t border-gray-800'>
-          <button className='flex items-center gap-4 p-3 mx-2 mb-4 rounded-xl text-gray-300 hover:bg-red-600 hover:text-white transition-all duration-200 group w-full'>
+          <button className={`flex items-center ${isCollapsed ? 'justify-center' : 'gap-4'} p-3 mx-2 mb-4 rounded-xl text-gray-300 hover:bg-red-600 hover:text-white transition-all duration-200 group w-full`}
+            title={isCollapsed ? 'Logout' : ''}
+          >
             <CiLogout className='w-6 h-6 flex-shrink-0' />
-            <p className='text-base font-medium'>
-              Logout
-            </p>
+            {!isCollapsed && (
+              <p className='text-base font-medium'>
+                Logout
+              </p>
+            )}
           </button>
         </div>
       </div>
@@ -95,7 +127,6 @@ const Sidebar = () => {
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-gray-900 border-t border-gray-800 shadow-2xl">
         <nav className='flex justify-around items-center py-1 px-1'>
           {bottomNavItems.map((item) => {
-            // Special rendering for profile with image
             if (item.icon === 'profile') {
               return (
                 <NavLink 
@@ -120,7 +151,6 @@ const Sidebar = () => {
               )
             }
             
-            // Regular icon rendering
             const IconComponent = item.icon
             return (
               <NavLink 
