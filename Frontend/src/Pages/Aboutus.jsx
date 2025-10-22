@@ -7,7 +7,7 @@ const Aboutus = () => {
     {
       name: 'Vikram Singh',
       role: 'Full Stack Developer',
-      description: 'Passionate about building scalable web applications and creating seamless user experiences.',
+      description: 'Responsible for both frontend and backend development, ensuring seamless integration and performance across the stack.',
       avatar: 'https://ui-avatars.com/api/?name=Vikram+Singh&size=200&background=3b82f6&color=fff',
       social: {
         github: '#',
@@ -18,8 +18,8 @@ const Aboutus = () => {
     },
     {
       name: 'Ritik Raj',
-      role: 'Frontend Developer',
-      description: 'Specialized in creating beautiful and responsive user interfaces with modern technologies.',
+      role: 'Blockchain and frontend Developer',
+      description: 'Focuses on blockchain integration and crafting intuitive, responsive user interfaces for modern web applications.',
       avatar: 'https://ui-avatars.com/api/?name=Ritik+Raj&size=200&background=8b5cf6&color=fff',
       social: {
         github: '#',
@@ -31,7 +31,7 @@ const Aboutus = () => {
     {
       name: 'Tejashree Venkatash',
       role: 'Backend Developer',
-      description: 'Expert in building robust APIs and managing database architectures for high-performance applications.',
+      description: 'Designs and implements robust APIs and manages databases to support scalable, high-performance systems.',
       avatar: 'https://ui-avatars.com/api/?name=Tejashree+Venkatash&size=200&background=ec4899&color=fff',
       social: {
         github: '#',
@@ -60,10 +60,14 @@ const Aboutus = () => {
       <div className='max-w-6xl mx-auto px-8 py-16'>
         <div className='bg-gray-900 rounded-2xl border border-gray-800 p-8 mb-16'>
           <h2 className='text-3xl font-bold mb-4 text-center'>Our Mission</h2>
-          <p className='text-gray-400 text-center text-lg leading-relaxed max-w-3xl mx-auto'>
-            Our mission is to build cutting-edge social media experiences that connect people and foster meaningful interactions. 
-            We strive to create platforms that are intuitive, secure, and enjoyable for users worldwide.
-          </p>
+          <div className='text-center text-lg leading-relaxed max-w-3xl mx-auto'>
+            <p className='text-orange-500 mb-4 font-semibold'>
+              Our mission is to build cutting-edge, Made-in-India social media experiences that connect people and foster meaningful interactions.
+            </p>
+            <p className='text-green-500 mb-4 font-semibold'>
+              We aim to empower digital innovation from India to the world by creating platforms that are intuitive, secure, and enjoyable for every user—reflecting India's spirit of creativity, trust, and technological excellence.
+            </p>
+          </div>
         </div>
 
         {/* Team Section */}
@@ -134,7 +138,7 @@ const Aboutus = () => {
         <div className='bg-gray-900 rounded-2xl border border-gray-800 p-8 mb-16'>
           <h2 className='text-3xl font-bold mb-8 text-center'>Technologies We Use</h2>
           <div className='grid grid-cols-2 md:grid-cols-4 gap-6'>
-            {['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS', 'JavaScript', 'Git', 'REST API'].map((tech, index) => (
+            {['React', 'Node.js', 'MongoDB', 'Express', 'JWT', 'Blockchain', 'Rust', 'solana'].map((tech, index) => (
               <div 
                 key={index}
                 className='bg-gray-800 rounded-xl p-4 text-center hover:bg-gray-700 transition-colors'
@@ -158,7 +162,7 @@ const Aboutus = () => {
 
         {/* Footer */}
         <div className='mt-16 text-center text-gray-500 text-sm pb-8'>
-          <p>© 2025 Instagram Clone. Built with ❤️ by our amazing team.</p>
+          <p>© 2025 VARTUL — Built with ❤️ by our amazing team.</p>
         </div>
       </div>
     </div>

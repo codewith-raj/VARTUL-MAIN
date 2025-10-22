@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import img from '../assets/vezzra-removebg-preview.png'
 import { Link, NavLink } from 'react-router-dom'
+import Logo from './ui/Logo'
 import { 
   CiHome, 
   CiSearch, 
@@ -51,13 +51,7 @@ const Sidebar = () => {
         <div className='flex flex-col'>
           {/* Logo */}
           <div className='p-6 border-b border-gray-800'>
-            <Link to='/'>
-              <img 
-                className='h-16 w-auto object-contain hover:scale-105 transition-transform duration-200' 
-                src={img} 
-                alt="Logo" 
-              />
-            </Link>
+            <Logo />
           </div>
           
           {/* Navigation Links */}
