@@ -24,7 +24,7 @@ const Hero = () => {
           <div className="flex-1 min-w-0">
             {/* Username and Buttons */}
             <div className="flex items-center gap-3 md:gap-5 mb-5">
-              <h1 className="text-lg md:text-xl font-light">vikramsingh.gangwar</h1>
+              <h1 className="text-lg md:text-xl font-light">Demo 1</h1>
               <button className="bg-gray-700 hover:bg-gray-600 px-3 md:px-6 py-1.5 rounded-lg text-xs md:text-sm font-semibold transition">
                 Edit profile
               </button>
@@ -57,9 +57,9 @@ const Hero = () => {
 
             {/* Name and Bio */}
             <div>
-              <p className="font-semibold mb-1">Vikram Singh Gangwar</p>
+              <p className="font-semibold mb-1">Demo 1</p>
               <p className="text-sm">Jai shree ram 💗 💗</p>
-              <p className="text-sm">Sc 🤷: v. singhgang2021</p>
+              <p className="text-sm">Sc 🤷: Demo.12021</p>
             </div>
           </div>
         </div>

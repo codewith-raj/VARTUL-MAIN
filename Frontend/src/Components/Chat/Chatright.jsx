@@ -19,7 +19,7 @@ const Chatright = () => {
           />
           <div>
             <p className='font-semibold text-white cursor-pointer'>{selectedChat?.name}</p>
-            <p className='text-sm text-gray-400 cursor-pointer'>bhayam_777</p>
+            <p className='text-sm text-gray-400 cursor-pointer'>Demo_777</p>
           </div>
         </div>
 

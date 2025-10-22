@@ -11,7 +11,7 @@ const Logo = ({ className = '', showText = true, textSize = 'text-2xl', linkTo =
         alt="VARTUL Logo" 
       />
       {showText && (
-        <div className={`font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent ${textSize}`}>
+        <div className={`font-bold bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 bg-clip-text text-transparent ${textSize}`}>
           VARTUL
         </div>
       )}

@@ -13,7 +13,7 @@ const Chatleft = () => {
         {/* User Profile */}
         <div className='flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity duration-200'>
           <p className='font-bold text-xl sm:text-2xl text-white truncate max-w-[150px] sm:max-w-none'>
-            vikramsingh
+            demo 1
           </p>
           <ChevronDownIcon className='w-6 h-6 text-gray-400 hover:text-white transition-colors duration-200 flex-shrink-0'/>
         </div>

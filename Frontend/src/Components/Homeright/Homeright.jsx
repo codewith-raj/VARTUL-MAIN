@@ -10,8 +10,8 @@ const Homeright = () => {
         <div className='flex items-center flex-1'>
           <img className='w-12 h-12 md:w-14 md:h-14 rounded-full object-cover' src={img1} alt="Profile" />
           <div className='flex flex-col ml-2 md:ml-3 flex-1'>
-            <p className='font-semibold text-sm'>vikramsingh.gangwar</p>
-            <p className='font-normal text-xs md:text-sm text-gray-500'>Vikram Singh Gangwar</p>
+            <p className='font-semibold text-sm'>Demo 1</p>
+            <p className='font-normal text-xs md:text-sm text-gray-500'>Demo1@gmail.com</p>
           </div>
         </div>
         <button className='text-blue-500 font-semibold text-xs hover:text-blue-700 transition-colors'>

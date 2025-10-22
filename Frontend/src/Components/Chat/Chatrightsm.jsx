@@ -30,7 +30,7 @@ const Chatrightsm = () => {
           />
           <div className='flex-1 min-w-0'>
             <p className='font-semibold text-white text-sm truncate'>{selectedChat?.name}</p>
-            <p className='text-xs text-gray-400 truncate'>bhayam_777</p>
+            <p className='text-xs text-gray-400 truncate'>Demo_777</p>
           </div>
         </div>
 
