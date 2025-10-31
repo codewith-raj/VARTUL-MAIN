@@ -44,7 +44,7 @@ const Twt_Token = () => {
     },
     {
       id: 3,
-      title: 'COUPON CODE',
+      title: 'COUPON CODES',
       price: 'PRICE: TWT',
       image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y291cG9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
     },
